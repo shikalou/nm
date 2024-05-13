@@ -1,3 +1,4 @@
 ft_nm
 objs/
 .vscode/
+*.o
