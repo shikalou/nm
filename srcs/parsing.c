@@ -1,46 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nm.h                                               :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 19:13:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/14 17:27:43 by ldinaut          ###   ########.fr       */
+/*   Created: 2024/05/14 17:09:26 by ldinaut           #+#    #+#             */
+/*   Updated: 2024/05/14 17:41:01 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NM_H
-#define NM_H
+#include "../includes/nm.h"
 
-#include "../libft/libft.h"
-
-#include <unistd.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <errno.h>
-#include <string.h>
-#include <stdbool.h>
-
-typedef struct s_flst
+char	**parse_params(int ac, char **av)
 {
-	int fd;
-	char *name;
-	struct s_flst *next;
-} t_flst;
-
-typedef struct s_data
-{
-	t_flst	files;
-	//bool	a;
-	bool	g;
-	bool	u;
-	bool	r;
-	bool	p;
-
-} t_data;
-
-/*PARSING*/
-char	**parse_params(int ac, char **av);
-
-#endif
+	for (int i = 0; i < ac; ++i)
+	{
+		if (av[i][0] == '-')
+		{
+			if (ft_strchr(av[i], 'g'))
+				printf("LOLOLOL\n");
+		}
+	}
+	return(NULL);
+}
