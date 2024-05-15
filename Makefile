@@ -6,13 +6,13 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 16:31:17 by ldinaut           #+#    #+#              #
-#    Updated: 2024/05/14 17:41:11 by ldinaut          ###   ########.fr        #
+#    Updated: 2024/05/15 17:07:37 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	ft_nm
 
-SRCS_FILES	=	main.c parsing.c
+SRCS_FILES	=	main.c parsing.c lst_utils.c frees.c
 
 SRCS		=	$(addprefix srcs/, $(SRCS_FILES))
 
@@ -20,7 +20,7 @@ CC			=	cc
 
 LIB			=	-Llibft -lft
 
-CFLAGS		=	-Wall -Wextra -Werror -I./includes #-g3
+CFLAGS		=	-Wall -Wextra -Werror -I./includes -g3
 
 OBJS_FILES	=	$(SRCS_FILES:%.c=%.o)
 

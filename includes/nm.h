@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:13:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/14 17:27:43 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/15 17:07:03 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@
 
 typedef struct s_flst
 {
-	int fd;
-	char *name;
-	struct s_flst *next;
+	int				fd;
+	char			*name;
+	struct s_flst	*next;
+
 } t_flst;
 
 typedef struct s_data
 {
-	t_flst	files;
+	t_flst	*files;
 	//bool	a;
 	bool	g;
 	bool	u;
@@ -41,6 +42,17 @@ typedef struct s_data
 } t_data;
 
 /*PARSING*/
-char	**parse_params(int ac, char **av);
+int	parse_params(int ac, char **av, t_data *data);
+
+/*LIST UTILS*/
+t_flst	*lst_init(t_data *data, int ac, char **av);
+t_flst	*lstnew();
+int		lstsize(t_flst *lst);
+void	lstaddback(t_flst **alst, t_flst *new);
+void	lstclear(t_flst **lst);
+
+/*FREE FUNCTIONS*/
+void	freetab(char **tab);
+void	free_struct(t_data *data);
 
 #endif
