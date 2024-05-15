@@ -6,20 +6,11 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:43:29 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/15 17:07:24 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/15 17:42:28 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/nm.h"
-
-void	init_struct(t_data *data)
-{
-	data->g = false;
-	data->u = false;
-	data->r = false;
-	data->p = false;
-	data->files = NULL;
-}
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -45,10 +36,17 @@ int	main(int argc, char **argv, char **envp)
 			free_struct(data);
 			return (1);
 		}
+		//la suite au prochain episode
 		free_struct(data);
 		return (0);
 	}
 	data->files = lst_init(data, ac, av);
+	t_flst *head = data->files;
+	while (head)
+	{
+		//la suite au prochain episode
+		head = head->next;
+	}
 	free_struct(data);
 	return (0);
 }

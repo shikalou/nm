@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:13:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/15 17:07:03 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/15 17:44:21 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@ typedef struct s_data
 
 /*PARSING*/
 int	parse_params(int ac, char **av, t_data *data);
+/*STRUCT UTILS*/
+void	init_struct(t_data *data);
+void	free_struct(t_data *data);
 
 /*LIST UTILS*/
 t_flst	*lst_init(t_data *data, int ac, char **av);
@@ -53,6 +56,5 @@ void	lstclear(t_flst **lst);
 
 /*FREE FUNCTIONS*/
 void	freetab(char **tab);
-void	free_struct(t_data *data);
 
 #endif
