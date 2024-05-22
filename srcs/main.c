@@ -6,11 +6,27 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:43:29 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/15 17:42:28 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/22 17:59:22 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/nm.h"
+
+int	check_elf(int fd)
+{
+	// VERIFIER LE RETOUR DES FONCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	int ret;
+	void *toto;
+	Elf64_Ehdr	*sf;
+	struct stat	__buf;
+
+	ret = fstat(fd, &__buf);
+	toto = mmap(NULL, __buf.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+	sf = (Elf64_Ehdr*)toto;
+	ret = sf->e_ident[EI_CLASS];
+	munmap(toto, __buf.st_size);
+	return (ret);
+}
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -19,6 +35,7 @@ int	main(int argc, char **argv, char **envp)
 	int		nb_params;
 	char	**av;
 	t_data	*data;
+	int		elf_t;
 
 	av = argv + 1;
 	ac = argc - 1;
@@ -36,7 +53,13 @@ int	main(int argc, char **argv, char **envp)
 			free_struct(data);
 			return (1);
 		}
-		//la suite au prochain episode
+		elf_t = check_elf(fd);
+		if (elf_t == 1)
+			print_32();
+		else if (elf_t == 2)
+			print_64();
+		else
+			printf("ft_nm: a.out: file format not recognized\n");
 		free_struct(data);
 		return (0);
 	}
@@ -44,7 +67,18 @@ int	main(int argc, char **argv, char **envp)
 	t_flst *head = data->files;
 	while (head)
 	{
-		//la suite au prochain episode
+		if (head->fd != -1)
+		{
+			elf_t = check_elf(head->fd);
+			if (elf_t == 1)
+				print_32();
+			else if (elf_t == 2)
+				print_64();
+			else
+				printf("ft_nm: %s: file format not recognized\n", head->name);
+		}
+		else
+			printf("nm: '%s': %s\n", head->name, strerror(errno));
 		head = head->next;
 	}
 	free_struct(data);

@@ -6,13 +6,13 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 16:31:17 by ldinaut           #+#    #+#              #
-#    Updated: 2024/05/15 17:42:54 by ldinaut          ###   ########.fr        #
+#    Updated: 2024/05/22 18:01:24 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	ft_nm
 
-SRCS_FILES	=	main.c parsing.c lst_utils.c struct_utils.c
+SRCS_FILES	=	main.c parsing.c lst_utils.c struct_utils.c nm.c
 
 SRCS		=	$(addprefix srcs/, $(SRCS_FILES))
 

@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:21:56 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/15 17:30:00 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/22 16:17:34 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ t_flst	*lst_init(t_data *data, int ac, char **av)
 			{
 				free(begin);
 				begin = lstnew(fd, ft_strdup(av[i]));
-				// begin->fd = fd;
-				// begin->name = ft_strdup(av[i]);
-				// begin->next = NULL;
 			}
 			else
 				lstaddback(&begin, lstnew(fd, ft_strdup(av[i])));
