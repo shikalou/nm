@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:43:29 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/22 17:59:22 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/28 16:26:15 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,23 @@
 int	check_elf(int fd)
 {
 	// VERIFIER LE RETOUR DES FONCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	int ret;
-	void *toto;
+	int			ret;
+	void		*toto;
 	Elf64_Ehdr	*sf;
 	struct stat	__buf;
 
-	ret = fstat(fd, &__buf);
+	ret = fstat(fd, &__buf); // pour recup la taille et whtvr(mais surtout la size)
 	toto = mmap(NULL, __buf.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+	if (toto == MAP_FAILED)
+		return (0);
 	sf = (Elf64_Ehdr*)toto;
 	ret = sf->e_ident[EI_CLASS];
 	munmap(toto, __buf.st_size);
 	return (ret);
 }
 
-int	main(int argc, char **argv, char **envp)
+int	main(int argc, char **argv)
 {
-	(void)envp;
 	int		ac;
 	int		nb_params;
 	char	**av;
@@ -55,9 +56,9 @@ int	main(int argc, char **argv, char **envp)
 		}
 		elf_t = check_elf(fd);
 		if (elf_t == 1)
-			print_32();
+			print_32(fd, data);
 		else if (elf_t == 2)
-			print_64();
+			print_64(fd, data);
 		else
 			printf("ft_nm: a.out: file format not recognized\n");
 		free_struct(data);
@@ -71,14 +72,14 @@ int	main(int argc, char **argv, char **envp)
 		{
 			elf_t = check_elf(head->fd);
 			if (elf_t == 1)
-				print_32();
+				print_32(head->fd, data);
 			else if (elf_t == 2)
-				print_64();
+				print_64(head->fd, data);
 			else
 				printf("ft_nm: %s: file format not recognized\n", head->name);
 		}
 		else
-			printf("nm: '%s': %s\n", head->name, strerror(errno));
+			printf("nm: '%s': No such file\n", head->name);
 		head = head->next;
 	}
 	free_struct(data);
