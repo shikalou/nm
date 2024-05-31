@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   nm_utils.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/31 17:40:35 by ldinaut           #+#    #+#             */
+/*   Updated: 2024/05/31 18:13:01 by ldinaut          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/nm.h"
+
+static void	ft_swap(Elf64_Sym **strs, int i, int j)
+{
+	Elf64_Sym	*temp;
+
+	temp = strs[i];
+	strs[i] = strs[j];
+	strs[j] = temp;
+}
+
+void	sort_tab64(Elf64_Sym **all_sym, int size, char *str)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	for (int i = 0; i < size - 1; ++i)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+
+			if (ft_strncmp(ft_strtrim(str+all_sym[i]->st_name, "_"), ft_strtrim(str+all_sym[j]->st_name, "_"), 10000) > 0)
+				ft_swap(all_sym, i, j);
+			j++;
+		}
+	}
+}

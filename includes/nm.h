@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:13:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/28 16:31:29 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/31 18:25:09 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ typedef struct s_data
 } t_data;
 
 /*nm trucs*/
-void	print_32(int fd, t_data *data);
-void	print_64(int fd, t_data *data);
+void	nm_32(int fd, t_data *data);
+void	nm_64(int fd, t_data *data);
+void	sort_tab64(Elf64_Sym **all_sym, int size, char *str);
 
 /*PARSING*/
 int	parse_params(int ac, char **av, t_data *data);
@@ -57,7 +58,7 @@ void	init_struct(t_data *data);
 void	free_struct(t_data *data);
 
 /*LIST UTILS*/
-t_flst	*lst_init(t_data *data, int ac, char **av);
+t_flst	*lst_init(int ac, char **av);
 t_flst	*lstnew(int fd, char *name);
 int		lstsize(t_flst *lst);
 void	lstaddback(t_flst **alst, t_flst *new);

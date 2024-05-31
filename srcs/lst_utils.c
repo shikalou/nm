@@ -6,15 +6,14 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 13:21:56 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/22 16:17:34 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/31 18:18:31 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/nm.h"
 
-t_flst	*lst_init(t_data *data, int ac, char **av)
+t_flst	*lst_init(int ac, char **av)
 {
-	(void)data;
 	t_flst	*begin;
 
 	begin = lstnew(-1, NULL);

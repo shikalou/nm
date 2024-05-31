@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:43:29 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/28 16:26:15 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/05/31 18:25:53 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,15 @@ int	main(int argc, char **argv)
 		}
 		elf_t = check_elf(fd);
 		if (elf_t == 1)
-			print_32(fd, data);
+			nm_32(fd, data);
 		else if (elf_t == 2)
-			print_64(fd, data);
+			nm_64(fd, data);
 		else
 			printf("ft_nm: a.out: file format not recognized\n");
 		free_struct(data);
 		return (0);
 	}
-	data->files = lst_init(data, ac, av);
+	data->files = lst_init(ac, av);
 	t_flst *head = data->files;
 	while (head)
 	{
@@ -72,9 +72,9 @@ int	main(int argc, char **argv)
 		{
 			elf_t = check_elf(head->fd);
 			if (elf_t == 1)
-				print_32(head->fd, data);
+				nm_32(head->fd, data);
 			else if (elf_t == 2)
-				print_64(head->fd, data);
+				nm_64(head->fd, data);
 			else
 				printf("ft_nm: %s: file format not recognized\n", head->name);
 		}
