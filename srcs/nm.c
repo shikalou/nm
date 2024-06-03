@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:59:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/31 18:54:05 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/06/03 18:32:29 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,40 @@ void	nm_32(int fd, t_data *data)
 	stock = (Elf32_Ehdr*)toto;
 }
 
+void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
+{
+	for (int i = 0; i < size; ++i)
+	{
+		int		sym_val = all_sym[i]->st_value;
+		char	*name = str+all_sym[i]->st_name;
+		char	symbol = '?';
+
+		if (ELF64_ST_TYPE(all_sym[i]->st_info) == STT_FILE)
+			continue ;
+		if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_GNU_UNIQUE)
+			symbol = 'u';
+		else if (all_sym[i]->st_shndx == SHN_UNDEF)
+			symbol = 'U';
+		else if (all_sym[i]->st_shndx == SHN_ABS)
+			symbol = 'a';
+		else if (all_sym[i]->st_shndx == SHN_COMMON)
+			symbol = 'c';
+		else if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_WEAK\
+			&& ELF64_ST_TYPE(all_sym[i]->st_info) == STT_OBJECT)
+			symbol = 'v';
+		else if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_WEAK)
+			symbol = 'w';
+		// else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS\
+		// 	&& s_shdr[all_sym[i]->st_shndx].sh_type == (SHF_ALLOC | SHF_WRITE))
+		// 	symbol = 'd';
+		else if (ELF64_ST_TYPE(all_sym[i]->st_info) == STT_FUNC)
+			symbol = 't';
+		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_DYNAMIC)
+			symbol = 'd';
+		printf("%016x %c %s\n", sym_val, symbol, name);
+	}
+}
+
 void	nm_64(int fd, t_data *data)
 {
 	Elf64_Ehdr	*s_ehdr;//executable header struct
@@ -35,7 +69,7 @@ void	nm_64(int fd, t_data *data)
 	Elf64_Sym	*s_sym; //symbols struct
 	struct stat	buf;
 	void		*toto;
-	Elf64_Sym		**all_sym;
+	Elf64_Sym	**all_sym;
 
 	int ret = fstat(fd, &buf);
 	if (ret == -1)
@@ -59,13 +93,9 @@ void	nm_64(int fd, t_data *data)
 			if (!all_sym)
 				return ;
 			for (int i = 0; i < size; ++i)
-			{
 				all_sym[i] = &s_sym[i];
-				// if (ELF64_ST_TYPE(s_sym[i].st_info) == STT_NOTYPE)
-					// printf("%s\n", str+s_sym[i].st_name);
-			}
 			sort_tab64(all_sym, size, str);
-			
+			print_64(all_sym, size, str, s_shdr);
 		}
 	}
 	(void)data;
