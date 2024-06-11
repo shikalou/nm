@@ -1,0 +1,991 @@
+0000000000404e10 d _DYNAMIC
+00000000004034e0 r __FRAME_END__
+0000000000405000 d _GLOBAL_OFFSET_TABLE_
+0000000000403094 r __GNU_EH_FRAME_HDR
+0000000000403000 R _IO_stdin_used
+0000000000405078 D __TMC_END__
+000000000040037c r __abi_tag
+0000000000405078 B __bss_start
+00000000004011c0 T check_elf
+0000000000000000 U close@GLIBC_2.2.5
+0000000000405078 b completed.0
+0000000000405068 W data_start
+0000000000405068 D __data_start
+0000000000401110 t deregister_tm_clones
+0000000000401100 T _dl_relocate_static_pie
+0000000000401180 t __do_global_dtors_aux
+0000000000404e08 ? __do_global_dtors_aux_fini_array_entry
+0000000000405070 D __dso_handle
+0000000000405078 D _edata
+0000000000405080 B _end
+0000000000000000 U __errno_location@GLIBC_2.2.5
+0000000000402500 t fill_tab
+00000000004025a4 T _fini
+00000000004011b0 t frame_dummy
+0000000000404e00 ? __frame_dummy_init_array_entry
+0000000000000000 U free@GLIBC_2.2.5
+0000000000401920 T free_struct
+0000000000401890 T freetab
+0000000000000000 U fstat@GLIBC_2.33
+0000000000402490 t ft_is_char
+00000000004020f0 T ft_strchr
+0000000000402190 T ft_strdup
+0000000000402240 T ft_strlen
+0000000000402280 T ft_strncmp
+0000000000402370 T ft_strtrim
+00000000004020a0 t ft_swap64
+0000000000402570 T ft_toupper
+0000000000000000 U __gmon_start__
+0000000000401000 T _init
+0000000000401850 T init_struct
+0000000000000000 U __libc_start_main@GLIBC_2.34
+00000000004015a0 T lst_init
+0000000000401710 T lstaddback
+00000000004017c0 T lstclear
+00000000004016a0 T lstnew
+0000000000401780 T lstsize
+0000000000401260 T main
+0000000000000000 U malloc@GLIBC_2.2.5
+0000000000000000 U mmap@GLIBC_2.2.5
+0000000000000000 U munmap@GLIBC_2.2.5
+0000000000401950 T nm_32
+0000000000401d70 T nm_64
+0000000000000000 U open@GLIBC_2.2.5
+0000000000401490 T parse_params
+00000000004019e0 T print_64
+0000000000000000 U printf@GLIBC_2.2.5
+0000000000401140 t register_tm_clones
+0000000000401fc0 T sort_tab64
+00000000004010d0 T _start
+0000000000000000 U strerror@GLIBC_2.2.5
+nm: '../main.o': No such file
+0000000000404e10 d _DYNAMIC
+00000000004034e0 r __FRAME_END__
+0000000000405000 d _GLOBAL_OFFSET_TABLE_
+0000000000403094 r __GNU_EH_FRAME_HDR
+0000000000403000 R _IO_stdin_used
+0000000000405078 D __TMC_END__
+000000000040037c r __abi_tag
+0000000000405078 B __bss_start
+00000000004011c0 T check_elf
+0000000000000000 U close@GLIBC_2.2.5
+0000000000405078 b completed.0
+0000000000405068 W data_start
+0000000000405068 D __data_start
+0000000000401110 t deregister_tm_clones
+0000000000401100 T _dl_relocate_static_pie
+0000000000401180 t __do_global_dtors_aux
+0000000000404e08 ? __do_global_dtors_aux_fini_array_entry
+0000000000405070 D __dso_handle
+0000000000405078 D _edata
+0000000000405080 B _end
+0000000000000000 U __errno_location@GLIBC_2.2.5
+0000000000402500 t fill_tab
+00000000004025a4 T _fini
+00000000004011b0 t frame_dummy
+0000000000404e00 ? __frame_dummy_init_array_entry
+0000000000000000 U free@GLIBC_2.2.5
+0000000000401920 T free_struct
+0000000000401890 T freetab
+0000000000000000 U fstat@GLIBC_2.33
+0000000000402490 t ft_is_char
+00000000004020f0 T ft_strchr
+0000000000402190 T ft_strdup
+0000000000402240 T ft_strlen
+0000000000402280 T ft_strncmp
+0000000000402370 T ft_strtrim
+00000000004020a0 t ft_swap64
+0000000000402570 T ft_toupper
+0000000000000000 U __gmon_start__
+0000000000401000 T _init
+0000000000401850 T init_struct
+0000000000000000 U __libc_start_main@GLIBC_2.34
+00000000004015a0 T lst_init
+0000000000401710 T lstaddback
+00000000004017c0 T lstclear
+00000000004016a0 T lstnew
+0000000000401780 T lstsize
+0000000000401260 T main
+0000000000000000 U malloc@GLIBC_2.2.5
+0000000000000000 U mmap@GLIBC_2.2.5
+0000000000000000 U munmap@GLIBC_2.2.5
+0000000000401950 T nm_32
+0000000000401d70 T nm_64
+0000000000000000 U open@GLIBC_2.2.5
+0000000000401490 T parse_params
+00000000004019e0 T print_64
+0000000000000000 U printf@GLIBC_2.2.5
+0000000000401140 t register_tm_clones
+0000000000401fc0 T sort_tab64
+00000000004010d0 T _start
+0000000000000000 U strerror@GLIBC_2.2.5
+nm: '../main.o': No such file
+0000000000404e10 d _DYNAMIC
+00000000004034e0 r __FRAME_END__
+0000000000405000 d _GLOBAL_OFFSET_TABLE_
+0000000000403094 r __GNU_EH_FRAME_HDR
+0000000000403000 R _IO_stdin_used
+0000000000405078 D __TMC_END__
+000000000040037c r __abi_tag
+0000000000405078 B __bss_start
+00000000004011c0 T check_elf
+0000000000000000 U close@GLIBC_2.2.5
+0000000000405078 b completed.0
+0000000000405068 W data_start
+0000000000405068 D __data_start
+0000000000401110 t deregister_tm_clones
+0000000000401100 T _dl_relocate_static_pie
+0000000000401180 t __do_global_dtors_aux
+0000000000404e08 ? __do_global_dtors_aux_fini_array_entry
+0000000000405070 D __dso_handle
+0000000000405078 D _edata
+0000000000405080 B _end
+0000000000000000 U __errno_location@GLIBC_2.2.5
+0000000000402500 t fill_tab
+00000000004025a4 T _fini
+00000000004011b0 t frame_dummy
+0000000000404e00 ? __frame_dummy_init_array_entry
+0000000000000000 U free@GLIBC_2.2.5
+0000000000401920 T free_struct
+0000000000401890 T freetab
+0000000000000000 U fstat@GLIBC_2.33
+0000000000402490 t ft_is_char
+00000000004020f0 T ft_strchr
+0000000000402190 T ft_strdup
+0000000000402240 T ft_strlen
+0000000000402280 T ft_strncmp
+0000000000402370 T ft_strtrim
+00000000004020a0 t ft_swap64
+0000000000402570 T ft_toupper
+0000000000000000 U __gmon_start__
+0000000000401000 T _init
+0000000000401850 T init_struct
+0000000000000000 U __libc_start_main@GLIBC_2.34
+00000000004015a0 T lst_init
+0000000000401710 T lstaddback
+00000000004017c0 T lstclear
+00000000004016a0 T lstnew
+0000000000401780 T lstsize
+0000000000401260 T main
+0000000000000000 U malloc@GLIBC_2.2.5
+0000000000000000 U mmap@GLIBC_2.2.5
+0000000000000000 U munmap@GLIBC_2.2.5
+0000000000401950 T nm_32
+0000000000401d70 T nm_64
+0000000000000000 U open@GLIBC_2.2.5
+0000000000401490 T parse_params
+00000000004019e0 T print_64
+0000000000000000 U printf@GLIBC_2.2.5
+0000000000401140 t register_tm_clones
+0000000000401fc0 T sort_tab64
+00000000004010d0 T _start
+0000000000000000 U strerror@GLIBC_2.2.5
+nm: '../main.o': No such file
+0000000000404e10 d _DYNAMIC
+00000000004034e0 r __FRAME_END__
+0000000000405000 d _GLOBAL_OFFSET_TABLE_
+0000000000403094 r __GNU_EH_FRAME_HDR
+0000000000403000 R _IO_stdin_used
+0000000000405078 D __TMC_END__
+000000000040037c r __abi_tag
+0000000000405078 B __bss_start
+00000000004011c0 T check_elf
+0000000000000000 U close@GLIBC_2.2.5
+0000000000405078 b completed.0
+0000000000405068 W data_start
+0000000000405068 D __data_start
+0000000000401110 t deregister_tm_clones
+0000000000401100 T _dl_relocate_static_pie
+0000000000401180 t __do_global_dtors_aux
+0000000000404e08 ? __do_global_dtors_aux_fini_array_entry
+0000000000405070 D __dso_handle
+0000000000405078 D _edata
+0000000000405080 B _end
+0000000000000000 U __errno_location@GLIBC_2.2.5
+0000000000402500 t fill_tab
+00000000004025a4 T _fini
+00000000004011b0 t frame_dummy
+0000000000404e00 ? __frame_dummy_init_array_entry
+0000000000000000 U free@GLIBC_2.2.5
+0000000000401920 T free_struct
+0000000000401890 T freetab
+0000000000000000 U fstat@GLIBC_2.33
+0000000000402490 t ft_is_char
+00000000004020f0 T ft_strchr
+0000000000402190 T ft_strdup
+0000000000402240 T ft_strlen
+0000000000402280 T ft_strncmp
+0000000000402370 T ft_strtrim
+00000000004020a0 t ft_swap64
+0000000000402570 T ft_toupper
+0000000000000000 U __gmon_start__
+0000000000401000 T _init
+0000000000401850 T init_struct
+0000000000000000 U __libc_start_main@GLIBC_2.34
+00000000004015a0 T lst_init
+0000000000401710 T lstaddback
+00000000004017c0 T lstclear
+00000000004016a0 T lstnew
+0000000000401780 T lstsize
+0000000000401260 T main
+0000000000000000 U malloc@GLIBC_2.2.5
+0000000000000000 U mmap@GLIBC_2.2.5
+0000000000000000 U munmap@GLIBC_2.2.5
+0000000000401950 T nm_32
+0000000000401d70 T nm_64
+0000000000000000 U open@GLIBC_2.2.5
+0000000000401490 T parse_params
+00000000004019e0 T print_64
+0000000000000000 U printf@GLIBC_2.2.5
+0000000000401140 t register_tm_clones
+0000000000401fc0 T sort_tab64
+00000000004010d0 T _start
+0000000000000000 U strerror@GLIBC_2.2.5
+nm: '../main.o': No such file
+0000000000404e10 d _DYNAMIC
+00000000004034e0 r __FRAME_END__
+0000000000405000 d _GLOBAL_OFFSET_TABLE_
+0000000000403094 r __GNU_EH_FRAME_HDR
+0000000000403000 R _IO_stdin_used
+0000000000405078 D __TMC_END__
+000000000040037c r __abi_tag
+0000000000405078 B __bss_start
+00000000004011c0 T check_elf
+0000000000000000 U close@GLIBC_2.2.5
+0000000000405078 b completed.0
+0000000000405068 W data_start
+0000000000405068 D __data_start
+0000000000401110 t deregister_tm_clones
+0000000000401100 T _dl_relocate_static_pie
+0000000000401180 t __do_global_dtors_aux
+0000000000404e08 ? __do_global_dtors_aux_fini_array_entry
+0000000000405070 D __dso_handle
+0000000000405078 D _edata
+0000000000405080 B _end
+0000000000000000 U __errno_location@GLIBC_2.2.5
+0000000000402500 t fill_tab
+00000000004025a4 T _fini
+00000000004011b0 t frame_dummy
+0000000000404e00 ? __frame_dummy_init_array_entry
+0000000000000000 U free@GLIBC_2.2.5
+0000000000401920 T free_struct
+0000000000401890 T freetab
+0000000000000000 U fstat@GLIBC_2.33
+0000000000402490 t ft_is_char
+00000000004020f0 T ft_strchr
+0000000000402190 T ft_strdup
+0000000000402240 T ft_strlen
+0000000000402280 T ft_strncmp
+0000000000402370 T ft_strtrim
+00000000004020a0 t ft_swap64
+0000000000402570 T ft_toupper
+0000000000000000 U __gmon_start__
+0000000000401000 T _init
+0000000000401850 T init_struct
+0000000000000000 U __libc_start_main@GLIBC_2.34
+00000000004015a0 T lst_init
+0000000000401710 T lstaddback
+00000000004017c0 T lstclear
+00000000004016a0 T lstnew
+0000000000401780 T lstsize
+0000000000401260 T main
+0000000000000000 U malloc@GLIBC_2.2.5
+0000000000000000 U mmap@GLIBC_2.2.5
+0000000000000000 U munmap@GLIBC_2.2.5
+0000000000401950 T nm_32
+0000000000401d70 T nm_64
+0000000000000000 U open@GLIBC_2.2.5
+0000000000401490 T parse_params
+00000000004019e0 T print_64
+0000000000000000 U printf@GLIBC_2.2.5
+0000000000401140 t register_tm_clones
+0000000000401fc0 T sort_tab64
+00000000004010d0 T _start
+0000000000000000 U strerror@GLIBC_2.2.5
+nm: '../main.o': No such file
+0000000000404e10 d _DYNAMIC
+00000000004034e0 r __FRAME_END__
+0000000000405000 d _GLOBAL_OFFSET_TABLE_
+0000000000403094 r __GNU_EH_FRAME_HDR
+0000000000403000 R _IO_stdin_used
+0000000000405078 D __TMC_END__
+000000000040037c r __abi_tag
+0000000000405078 B __bss_start
+00000000004011c0 T check_elf
+0000000000000000 U close@GLIBC_2.2.5
+0000000000405078 b completed.0
+0000000000405068 W data_start
+0000000000405068 D __data_start
+0000000000401110 t deregister_tm_clones
+0000000000401100 T _dl_relocate_static_pie
+0000000000401180 t __do_global_dtors_aux
+0000000000404e08 ? __do_global_dtors_aux_fini_array_entry
+0000000000405070 D __dso_handle
+0000000000405078 D _edata
+0000000000405080 B _end
+0000000000000000 U __errno_location@GLIBC_2.2.5
+0000000000402500 t fill_tab
+00000000004025a4 T _fini
+00000000004011b0 t frame_dummy
+0000000000404e00 ? __frame_dummy_init_array_entry
+0000000000000000 U free@GLIBC_2.2.5
+0000000000401920 T free_struct
+0000000000401890 T freetab
+0000000000000000 U fstat@GLIBC_2.33
+0000000000402490 t ft_is_char
+00000000004020f0 T ft_strchr
+0000000000402190 T ft_strdup
+0000000000402240 T ft_strlen
+0000000000402280 T ft_strncmp
+0000000000402370 T ft_strtrim
+00000000004020a0 t ft_swap64
+0000000000402570 T ft_toupper
+0000000000000000 U __gmon_start__
+0000000000401000 T _init
+0000000000401850 T init_struct
+0000000000000000 U __libc_start_main@GLIBC_2.34
+00000000004015a0 T lst_init
+0000000000401710 T lstaddback
+00000000004017c0 T lstclear
+00000000004016a0 T lstnew
+0000000000401780 T lstsize
+0000000000401260 T main
+0000000000000000 U malloc@GLIBC_2.2.5
+0000000000000000 U mmap@GLIBC_2.2.5
+0000000000000000 U munmap@GLIBC_2.2.5
+0000000000401950 T nm_32
+0000000000401d70 T nm_64
+0000000000000000 U open@GLIBC_2.2.5
+0000000000401490 T parse_params
+00000000004019e0 T print_64
+0000000000000000 U printf@GLIBC_2.2.5
+0000000000401140 t register_tm_clones
+0000000000401fc0 T sort_tab64
+00000000004010d0 T _start
+0000000000000000 U strerror@GLIBC_2.2.5
+nm: '../main.o': No such file
+0000000000404e10 d _DYNAMIC
+00000000004034e0 r __FRAME_END__
+0000000000405000 d _GLOBAL_OFFSET_TABLE_
+0000000000403094 r __GNU_EH_FRAME_HDR
+0000000000403000 R _IO_stdin_used
+0000000000405078 D __TMC_END__
+000000000040037c r __abi_tag
+0000000000405078 B __bss_start
+00000000004011c0 T check_elf
+0000000000000000 U close@GLIBC_2.2.5
+0000000000405078 b completed.0
+0000000000405068 W data_start
+0000000000405068 D __data_start
+0000000000401110 t deregister_tm_clones
+0000000000401100 T _dl_relocate_static_pie
+0000000000401180 t __do_global_dtors_aux
+0000000000404e08 ? __do_global_dtors_aux_fini_array_entry
+0000000000405070 D __dso_handle
+0000000000405078 D _edata
+0000000000405080 B _end
+0000000000000000 U __errno_location@GLIBC_2.2.5
+0000000000402500 t fill_tab
+00000000004025a4 T _fini
+00000000004011b0 t frame_dummy
+0000000000404e00 ? __frame_dummy_init_array_entry
+0000000000000000 U free@GLIBC_2.2.5
+0000000000401920 T free_struct
+0000000000401890 T freetab
+0000000000000000 U fstat@GLIBC_2.33
+0000000000402490 t ft_is_char
+00000000004020f0 T ft_strchr
+0000000000402190 T ft_strdup
+0000000000402240 T ft_strlen
+0000000000402280 T ft_strncmp
+0000000000402370 T ft_strtrim
+00000000004020a0 t ft_swap64
+0000000000402570 T ft_toupper
+0000000000000000 U __gmon_start__
+0000000000401000 T _init
+0000000000401850 T init_struct
+0000000000000000 U __libc_start_main@GLIBC_2.34
+00000000004015a0 T lst_init
+0000000000401710 T lstaddback
+00000000004017c0 T lstclear
+00000000004016a0 T lstnew
+0000000000401780 T lstsize
+0000000000401260 T main
+0000000000000000 U malloc@GLIBC_2.2.5
+0000000000000000 U mmap@GLIBC_2.2.5
+0000000000000000 U munmap@GLIBC_2.2.5
+0000000000401950 T nm_32
+0000000000401d70 T nm_64
+0000000000000000 U open@GLIBC_2.2.5
+0000000000401490 T parse_params
+00000000004019e0 T print_64
+0000000000000000 U printf@GLIBC_2.2.5
+0000000000401140 t register_tm_clones
+0000000000401fc0 T sort_tab64
+00000000004010d0 T _start
+0000000000000000 U strerror@GLIBC_2.2.5
+nm: '../main.o': No such file
+0000000000404e10 d _DYNAMIC
+00000000004034e0 r __FRAME_END__
+0000000000405000 d _GLOBAL_OFFSET_TABLE_
+0000000000403094 r __GNU_EH_FRAME_HDR
+0000000000403000 R _IO_stdin_used
+0000000000405078 D __TMC_END__
+000000000040037c r __abi_tag
+0000000000405078 B __bss_start
+00000000004011c0 T check_elf
+0000000000000000 U close@GLIBC_2.2.5
+0000000000405078 b completed.0
+0000000000405068 W data_start
+0000000000405068 D __data_start
+0000000000401110 t deregister_tm_clones
+0000000000401100 T _dl_relocate_static_pie
+0000000000401180 t __do_global_dtors_aux
+0000000000404e08 ? __do_global_dtors_aux_fini_array_entry
+0000000000405070 D __dso_handle
+0000000000405078 D _edata
+0000000000405080 B _end
+0000000000000000 U __errno_location@GLIBC_2.2.5
+0000000000402500 t fill_tab
+00000000004025a4 T _fini
+00000000004011b0 t frame_dummy
+0000000000404e00 ? __frame_dummy_init_array_entry
+0000000000000000 U free@GLIBC_2.2.5
+0000000000401920 T free_struct
+0000000000401890 T freetab
+0000000000000000 U fstat@GLIBC_2.33
+0000000000402490 t ft_is_char
+00000000004020f0 T ft_strchr
+0000000000402190 T ft_strdup
+0000000000402240 T ft_strlen
+0000000000402280 T ft_strncmp
+0000000000402370 T ft_strtrim
+00000000004020a0 t ft_swap64
+0000000000402570 T ft_toupper
+0000000000000000 U __gmon_start__
+0000000000401000 T _init
+0000000000401850 T init_struct
+0000000000000000 U __libc_start_main@GLIBC_2.34
+00000000004015a0 T lst_init
+0000000000401710 T lstaddback
+00000000004017c0 T lstclear
+00000000004016a0 T lstnew
+0000000000401780 T lstsize
+0000000000401260 T main
+0000000000000000 U malloc@GLIBC_2.2.5
+0000000000000000 U mmap@GLIBC_2.2.5
+0000000000000000 U munmap@GLIBC_2.2.5
+0000000000401950 T nm_32
+0000000000401d70 T nm_64
+0000000000000000 U open@GLIBC_2.2.5
+0000000000401490 T parse_params
+00000000004019e0 T print_64
+0000000000000000 U printf@GLIBC_2.2.5
+0000000000401140 t register_tm_clones
+0000000000401fc0 T sort_tab64
+00000000004010d0 T _start
+0000000000000000 U strerror@GLIBC_2.2.5
+ft_nm: /lib/EXTLINUX: file format not recognized
+ft_nm: /lib/NetworkManager: file format not recognized
+ft_nm: /lib/SYSLINUX: file format not recognized
+ft_nm: /lib/X11: file format not recognized
+ft_nm: /lib/apache2: file format not recognized
+ft_nm: /lib/apg: file format not recognized
+ft_nm: /lib/apparmor: file format not recognized
+ft_nm: /lib/apt: file format not recognized
+ft_nm: /lib/aspell: file format not recognized
+ft_nm: /lib/avr: file format not recognized
+ft_nm: /lib/bfd-plugins: file format not recognized
+ft_nm: /lib/binfmt-support: file format not recognized
+ft_nm: /lib/binfmt.d: file format not recognized
+ft_nm: /lib/blt2.5: file format not recognized
+ft_nm: /lib/bluetooth: file format not recognized
+ft_nm: /lib/byobu: file format not recognized
+ft_nm: /lib/cargo: file format not recognized
+ft_nm: /lib/caribou: file format not recognized
+ft_nm: /lib/cgi-bin: file format not recognized
+ft_nm: /lib/clang: file format not recognized
+ft_nm: /lib/cloud-init: file format not recognized
+ft_nm: /lib/cmake: file format not recognized
+ft_nm: /lib/cnf-update-db: file format not recognized
+ft_nm: /lib/command-not-found: file format not recognized
+ft_nm: /lib/compat-ld: file format not recognized
+ft_nm: /lib/console-setup: file format not recognized
+ft_nm: /lib/crda: file format not recognized
+ft_nm: /lib/cryptsetup: file format not recognized
+ft_nm: /lib/cups: file format not recognized
+ft_nm: /lib/dbus-1.0: file format not recognized
+ft_nm: /lib/debug: file format not recognized
+ft_nm: /lib/dh-elpa: file format not recognized
+ft_nm: /lib/dkms: file format not recognized
+ft_nm: /lib/dpkg: file format not recognized
+ft_nm: /lib/dracut: file format not recognized
+ft_nm: /lib/emacs: file format not recognized
+ft_nm: /lib/emacsen-common: file format not recognized
+ft_nm: /lib/environment.d: file format not recognized
+ft_nm: /lib/evolution-data-server: file format not recognized
+ft_nm: /lib/file: file format not recognized
+ft_nm: /lib/finalrd: file format not recognized
+ft_nm: /lib/firefox-esr: file format not recognized
+ft_nm: /lib/firefox-esr-addons: file format not recognized
+ft_nm: /lib/firewalld: file format not recognized
+ft_nm: /lib/firmware: file format not recognized
+ft_nm: /lib/gcc: file format not recognized
+ft_nm: /lib/gimp: file format not recognized
+ft_nm: /lib/girepository-1.0: file format not recognized
+ft_nm: /lib/git-core: file format not recognized
+ft_nm: /lib/gnome-session: file format not recognized
+ft_nm: /lib/gnome-settings-daemon-3.0: file format not recognized
+ft_nm: /lib/gnome-settings-daemon-42: file format not recognized
+ft_nm: /lib/gnome-shell: file format not recognized
+ft_nm: /lib/gnome-tweak-tool: file format not recognized
+ft_nm: /lib/gnupg: file format not recognized
+ft_nm: /lib/gnupg2: file format not recognized
+ft_nm: /lib/go: file format not recognized
+ft_nm: /lib/go-1.18: file format not recognized
+ft_nm: /lib/gold-ld: file format not recognized
+ft_nm: /lib/groff: file format not recognized
+ft_nm: /lib/grub: file format not recognized
+ft_nm: /lib/gvfs: file format not recognized
+ft_nm: /lib/hdparm: file format not recognized
+ft_nm: /lib/ibus-mozc: file format not recognized
+ft_nm: /lib/indicators3: file format not recognized
+ft_nm: /lib/init: file format not recognized
+ft_nm: /lib/initcpio: file format not recognized
+ft_nm: /lib/initramfs-tools: file format not recognized
+ft_nm: /lib/ipxe: file format not recognized
+ft_nm: /lib/ispell: file format not recognized
+ft_nm: /lib/jayatana: file format not recognized
+ft_nm: /lib/jvm: file format not recognized
+ft_nm: /lib/kernel: file format not recognized
+ft_nm: /lib/klibc: file format not recognized
+ft_nm: /lib/libreoffice: file format not recognized
+ft_nm: /lib/libsupp.a: file format not recognized
+ft_nm: /lib/libvirt: file format not recognized
+ft_nm: /lib/lightdm: file format not recognized
+ft_nm: /lib/linux: file format not recognized
+ft_nm: /lib/linux-boot-probes: file format not recognized
+ft_nm: /lib/linux-tools: file format not recognized
+ft_nm: /lib/linux-tools-5.15.0-107: file format not recognized
+ft_nm: /lib/linux-tools-5.15.0-112: file format not recognized
+ft_nm: /lib/llvm-12: file format not recognized
+ft_nm: /lib/locale: file format not recognized
+ft_nm: /lib/lp_solve: file format not recognized
+ft_nm: /lib/lsb: file format not recognized
+ft_nm: /lib/man-db: file format not recognized
+ft_nm: /lib/mime: file format not recognized
+ft_nm: /lib/modprobe.d: file format not recognized
+ft_nm: /lib/modules: file format not recognized
+ft_nm: /lib/modules-load.d: file format not recognized
+ft_nm: /lib/mozc: file format not recognized
+ft_nm: /lib/mozilla: file format not recognized
+ft_nm: /lib/multipath: file format not recognized
+ft_nm: /lib/nagios: file format not recognized
+ft_nm: /lib/needrestart: file format not recognized
+ft_nm: /lib/netplan: file format not recognized
+ft_nm: /lib/networkd-dispatcher: file format not recognized
+ft_nm: /lib/node_modules: file format not recognized
+ft_nm: /lib/nvidia: file format not recognized
+ft_nm: /lib/open-iscsi: file format not recognized
+ft_nm: /lib/openssh: file format not recognized
+ft_nm: /lib/os-prober: file format not recognized
+ft_nm: /lib/os-probes: file format not recognized
+ft_nm: /lib/os-release: file format not recognized
+ft_nm: /lib/pam.d: file format not recognized
+ft_nm: /lib/pcsc: file format not recognized
+ft_nm: /lib/php: file format not recognized
+ft_nm: /lib/pkg-config.multiarch: file format not recognized
+ft_nm: /lib/pkgconfig: file format not recognized
+ft_nm: /lib/pm-utils: file format not recognized
+ft_nm: /lib/policykit-1: file format not recognized
+ft_nm: /lib/polkit-1: file format not recognized
+ft_nm: /lib/pppd: file format not recognized
+ft_nm: /lib/pulse-15.99.1+dfsg1: file format not recognized
+ft_nm: /lib/python2.7: file format not recognized
+ft_nm: /lib/python3: file format not recognized
+ft_nm: /lib/python3.10: file format not recognized
+ft_nm: /lib/python3.11: file format not recognized
+ft_nm: /lib/python3.8: file format not recognized
+ft_nm: /lib/qemu: file format not recognized
+ft_nm: /lib/recovery-mode: file format not recognized
+ft_nm: /lib/rpm: file format not recognized
+ft_nm: /lib/rr: file format not recognized
+ft_nm: /lib/rsyslog: file format not recognized
+ft_nm: /lib/ruby: file format not recognized
+ft_nm: /lib/rustlib: file format not recognized
+ft_nm: /lib/sasl2: file format not recognized
+ft_nm: /lib/shim: file format not recognized
+ft_nm: /lib/slack: file format not recognized
+ft_nm: /lib/snapd: file format not recognized
+ft_nm: /lib/software-properties: file format not recognized
+ft_nm: /lib/ssl: file format not recognized
+ft_nm: /lib/sysctl.d: file format not recognized
+ft_nm: /lib/syslinux: file format not recognized
+ft_nm: /lib/systemd: file format not recognized
+ft_nm: /lib/sysusers.d: file format not recognized
+ft_nm: /lib/tc: file format not recognized
+ft_nm: /lib/tcltk: file format not recognized
+ft_nm: /lib/terminfo: file format not recognized
+ft_nm: /lib/tmpfiles.d: file format not recognized
+ft_nm: /lib/ubiquity: file format not recognized
+ft_nm: /lib/ubuntu-advantage: file format not recognized
+ft_nm: /lib/ubuntu-release-upgrader: file format not recognized
+ft_nm: /lib/udev: file format not recognized
+ft_nm: /lib/udisks2: file format not recognized
+ft_nm: /lib/ufw: file format not recognized
+ft_nm: /lib/unity-settings-daemon: file format not recognized
+ft_nm: /lib/unity-settings-daemon-1.0: file format not recognized
+ft_nm: /lib/update-notifier: file format not recognized
+ft_nm: /lib/usrmerge: file format not recognized
+ft_nm: /lib/valgrind: file format not recognized
+ft_nm: /lib/virtualbox: file format not recognized
+ft_nm: /lib/w3m: file format not recognized
+ft_nm: /lib/x86_64-linux-gnu: file format not recognized
+ft_nm: /lib/xfsprogs: file format not recognized
+ft_nm: /lib/xorg: file format not recognized
+ft_nm: /lib/xserver-xorg-video-intel: file format not recognized
+ft_nm: /lib32/gconv: file format not recognized
+ft_nm: /lib32/libBrokenLocale.a: file format not recognized
+ft_nm: /lib32/libanl.a: file format not recognized
+ft_nm: /lib32/libc.a: file format not recognized
+ft_nm: /lib32/libc.so: file format not recognized
+ft_nm: /lib32/libc_nonshared.a: file format not recognized
+ft_nm: /lib32/libdl.a: file format not recognized
+ft_nm: /lib32/libg.a: file format not recognized
+ft_nm: /lib32/libm.a: file format not recognized
+ft_nm: /lib32/libpthread.a: file format not recognized
+ft_nm: /lib32/libresolv.a: file format not recognized
+ft_nm: /lib32/librt.a: file format not recognized
+ft_nm: /lib32/libutil.a: file format not recognized
+ft_nm: /libx32/gconv: file format not recognized
+ft_nm: /libx32/libBrokenLocale.a: file format not recognized
+ft_nm: /libx32/libanl.a: file format not recognized
+ft_nm: /libx32/libc.a: file format not recognized
+ft_nm: /libx32/libc.so: file format not recognized
+ft_nm: /libx32/libc_nonshared.a: file format not recognized
+ft_nm: /libx32/libdl.a: file format not recognized
+ft_nm: /libx32/libg.a: file format not recognized
+ft_nm: /libx32/libm-2.35.a: file format not recognized
+ft_nm: /libx32/libm.a: file format not recognized
+ft_nm: /libx32/libm.so: file format not recognized
+ft_nm: /libx32/libmvec.a: file format not recognized
+ft_nm: /libx32/libpthread.a: file format not recognized
+ft_nm: /libx32/libresolv.a: file format not recognized
+ft_nm: /libx32/librt.a: file format not recognized
+ft_nm: /libx32/libutil.a: file format not recognized
+nm: '../main.o': No such file
+nm: '../ft_printf/*/*': No such file
+ft_nm: /lib/EXTLINUX: file format not recognized
+ft_nm: /lib/NetworkManager: file format not recognized
+ft_nm: /lib/SYSLINUX: file format not recognized
+ft_nm: /lib/X11: file format not recognized
+ft_nm: /lib/apache2: file format not recognized
+ft_nm: /lib/apg: file format not recognized
+ft_nm: /lib/apparmor: file format not recognized
+ft_nm: /lib/apt: file format not recognized
+ft_nm: /lib/aspell: file format not recognized
+ft_nm: /lib/avr: file format not recognized
+ft_nm: /lib/bfd-plugins: file format not recognized
+ft_nm: /lib/binfmt-support: file format not recognized
+ft_nm: /lib/binfmt.d: file format not recognized
+ft_nm: /lib/blt2.5: file format not recognized
+ft_nm: /lib/bluetooth: file format not recognized
+ft_nm: /lib/byobu: file format not recognized
+ft_nm: /lib/cargo: file format not recognized
+ft_nm: /lib/caribou: file format not recognized
+ft_nm: /lib/cgi-bin: file format not recognized
+ft_nm: /lib/clang: file format not recognized
+ft_nm: /lib/cloud-init: file format not recognized
+ft_nm: /lib/cmake: file format not recognized
+ft_nm: /lib/cnf-update-db: file format not recognized
+ft_nm: /lib/command-not-found: file format not recognized
+ft_nm: /lib/compat-ld: file format not recognized
+ft_nm: /lib/console-setup: file format not recognized
+ft_nm: /lib/crda: file format not recognized
+ft_nm: /lib/cryptsetup: file format not recognized
+ft_nm: /lib/cups: file format not recognized
+ft_nm: /lib/dbus-1.0: file format not recognized
+ft_nm: /lib/debug: file format not recognized
+ft_nm: /lib/dh-elpa: file format not recognized
+ft_nm: /lib/dkms: file format not recognized
+ft_nm: /lib/dpkg: file format not recognized
+ft_nm: /lib/dracut: file format not recognized
+ft_nm: /lib/emacs: file format not recognized
+ft_nm: /lib/emacsen-common: file format not recognized
+ft_nm: /lib/environment.d: file format not recognized
+ft_nm: /lib/evolution-data-server: file format not recognized
+ft_nm: /lib/file: file format not recognized
+ft_nm: /lib/finalrd: file format not recognized
+ft_nm: /lib/firefox-esr: file format not recognized
+ft_nm: /lib/firefox-esr-addons: file format not recognized
+ft_nm: /lib/firewalld: file format not recognized
+ft_nm: /lib/firmware: file format not recognized
+ft_nm: /lib/gcc: file format not recognized
+ft_nm: /lib/gimp: file format not recognized
+ft_nm: /lib/girepository-1.0: file format not recognized
+ft_nm: /lib/git-core: file format not recognized
+ft_nm: /lib/gnome-session: file format not recognized
+ft_nm: /lib/gnome-settings-daemon-3.0: file format not recognized
+ft_nm: /lib/gnome-settings-daemon-42: file format not recognized
+ft_nm: /lib/gnome-shell: file format not recognized
+ft_nm: /lib/gnome-tweak-tool: file format not recognized
+ft_nm: /lib/gnupg: file format not recognized
+ft_nm: /lib/gnupg2: file format not recognized
+ft_nm: /lib/go: file format not recognized
+ft_nm: /lib/go-1.18: file format not recognized
+ft_nm: /lib/gold-ld: file format not recognized
+ft_nm: /lib/groff: file format not recognized
+ft_nm: /lib/grub: file format not recognized
+ft_nm: /lib/gvfs: file format not recognized
+ft_nm: /lib/hdparm: file format not recognized
+ft_nm: /lib/ibus-mozc: file format not recognized
+ft_nm: /lib/indicators3: file format not recognized
+ft_nm: /lib/init: file format not recognized
+ft_nm: /lib/initcpio: file format not recognized
+ft_nm: /lib/initramfs-tools: file format not recognized
+ft_nm: /lib/ipxe: file format not recognized
+ft_nm: /lib/ispell: file format not recognized
+ft_nm: /lib/jayatana: file format not recognized
+ft_nm: /lib/jvm: file format not recognized
+ft_nm: /lib/kernel: file format not recognized
+ft_nm: /lib/klibc: file format not recognized
+ft_nm: /lib/libreoffice: file format not recognized
+ft_nm: /lib/libsupp.a: file format not recognized
+ft_nm: /lib/libvirt: file format not recognized
+ft_nm: /lib/lightdm: file format not recognized
+ft_nm: /lib/linux: file format not recognized
+ft_nm: /lib/linux-boot-probes: file format not recognized
+ft_nm: /lib/linux-tools: file format not recognized
+ft_nm: /lib/linux-tools-5.15.0-107: file format not recognized
+ft_nm: /lib/linux-tools-5.15.0-112: file format not recognized
+ft_nm: /lib/llvm-12: file format not recognized
+ft_nm: /lib/locale: file format not recognized
+ft_nm: /lib/lp_solve: file format not recognized
+ft_nm: /lib/lsb: file format not recognized
+ft_nm: /lib/man-db: file format not recognized
+ft_nm: /lib/mime: file format not recognized
+ft_nm: /lib/modprobe.d: file format not recognized
+ft_nm: /lib/modules: file format not recognized
+ft_nm: /lib/modules-load.d: file format not recognized
+ft_nm: /lib/mozc: file format not recognized
+ft_nm: /lib/mozilla: file format not recognized
+ft_nm: /lib/multipath: file format not recognized
+ft_nm: /lib/nagios: file format not recognized
+ft_nm: /lib/needrestart: file format not recognized
+ft_nm: /lib/netplan: file format not recognized
+ft_nm: /lib/networkd-dispatcher: file format not recognized
+ft_nm: /lib/node_modules: file format not recognized
+ft_nm: /lib/nvidia: file format not recognized
+ft_nm: /lib/open-iscsi: file format not recognized
+ft_nm: /lib/openssh: file format not recognized
+ft_nm: /lib/os-prober: file format not recognized
+ft_nm: /lib/os-probes: file format not recognized
+ft_nm: /lib/os-release: file format not recognized
+ft_nm: /lib/pam.d: file format not recognized
+ft_nm: /lib/pcsc: file format not recognized
+ft_nm: /lib/php: file format not recognized
+ft_nm: /lib/pkg-config.multiarch: file format not recognized
+ft_nm: /lib/pkgconfig: file format not recognized
+ft_nm: /lib/pm-utils: file format not recognized
+ft_nm: /lib/policykit-1: file format not recognized
+ft_nm: /lib/polkit-1: file format not recognized
+ft_nm: /lib/pppd: file format not recognized
+ft_nm: /lib/pulse-15.99.1+dfsg1: file format not recognized
+ft_nm: /lib/python2.7: file format not recognized
+ft_nm: /lib/python3: file format not recognized
+ft_nm: /lib/python3.10: file format not recognized
+ft_nm: /lib/python3.11: file format not recognized
+ft_nm: /lib/python3.8: file format not recognized
+ft_nm: /lib/qemu: file format not recognized
+ft_nm: /lib/recovery-mode: file format not recognized
+ft_nm: /lib/rpm: file format not recognized
+ft_nm: /lib/rr: file format not recognized
+ft_nm: /lib/rsyslog: file format not recognized
+ft_nm: /lib/ruby: file format not recognized
+ft_nm: /lib/rustlib: file format not recognized
+ft_nm: /lib/sasl2: file format not recognized
+ft_nm: /lib/shim: file format not recognized
+ft_nm: /lib/slack: file format not recognized
+ft_nm: /lib/snapd: file format not recognized
+ft_nm: /lib/software-properties: file format not recognized
+ft_nm: /lib/ssl: file format not recognized
+ft_nm: /lib/sysctl.d: file format not recognized
+ft_nm: /lib/syslinux: file format not recognized
+ft_nm: /lib/systemd: file format not recognized
+ft_nm: /lib/sysusers.d: file format not recognized
+ft_nm: /lib/tc: file format not recognized
+ft_nm: /lib/tcltk: file format not recognized
+ft_nm: /lib/terminfo: file format not recognized
+ft_nm: /lib/tmpfiles.d: file format not recognized
+ft_nm: /lib/ubiquity: file format not recognized
+ft_nm: /lib/ubuntu-advantage: file format not recognized
+ft_nm: /lib/ubuntu-release-upgrader: file format not recognized
+ft_nm: /lib/udev: file format not recognized
+ft_nm: /lib/udisks2: file format not recognized
+ft_nm: /lib/ufw: file format not recognized
+ft_nm: /lib/unity-settings-daemon: file format not recognized
+ft_nm: /lib/unity-settings-daemon-1.0: file format not recognized
+ft_nm: /lib/update-notifier: file format not recognized
+ft_nm: /lib/usrmerge: file format not recognized
+ft_nm: /lib/valgrind: file format not recognized
+ft_nm: /lib/virtualbox: file format not recognized
+ft_nm: /lib/w3m: file format not recognized
+ft_nm: /lib/x86_64-linux-gnu: file format not recognized
+ft_nm: /lib/xfsprogs: file format not recognized
+ft_nm: /lib/xorg: file format not recognized
+ft_nm: /lib/xserver-xorg-video-intel: file format not recognized
+ft_nm: /lib32/gconv: file format not recognized
+ft_nm: /lib32/libBrokenLocale.a: file format not recognized
+ft_nm: /lib32/libanl.a: file format not recognized
+ft_nm: /lib32/libc.a: file format not recognized
+ft_nm: /lib32/libc.so: file format not recognized
+ft_nm: /lib32/libc_nonshared.a: file format not recognized
+ft_nm: /lib32/libdl.a: file format not recognized
+ft_nm: /lib32/libg.a: file format not recognized
+ft_nm: /lib32/libm.a: file format not recognized
+ft_nm: /lib32/libpthread.a: file format not recognized
+ft_nm: /lib32/libresolv.a: file format not recognized
+ft_nm: /lib32/librt.a: file format not recognized
+ft_nm: /lib32/libutil.a: file format not recognized
+ft_nm: /libx32/gconv: file format not recognized
+ft_nm: /libx32/libBrokenLocale.a: file format not recognized
+ft_nm: /libx32/libanl.a: file format not recognized
+ft_nm: /libx32/libc.a: file format not recognized
+ft_nm: /libx32/libc.so: file format not recognized
+ft_nm: /libx32/libc_nonshared.a: file format not recognized
+ft_nm: /libx32/libdl.a: file format not recognized
+ft_nm: /libx32/libg.a: file format not recognized
+ft_nm: /libx32/libm-2.35.a: file format not recognized
+ft_nm: /libx32/libm.a: file format not recognized
+ft_nm: /libx32/libm.so: file format not recognized
+ft_nm: /libx32/libmvec.a: file format not recognized
+ft_nm: /libx32/libpthread.a: file format not recognized
+ft_nm: /libx32/libresolv.a: file format not recognized
+ft_nm: /libx32/librt.a: file format not recognized
+ft_nm: /libx32/libutil.a: file format not recognized
+ft_nm: /usr/bin/GET: file format not recognized
+ft_nm: /usr/bin/HEAD: file format not recognized
+ft_nm: /usr/bin/NF: file format not recognized
+ft_nm: /usr/bin/POST: file format not recognized
+ft_nm: /usr/bin/VBoxBalloonCtrl: file format not recognized
+ft_nm: /usr/bin/VBoxHeadless: file format not recognized
+ft_nm: /usr/bin/VBoxManage: file format not recognized
+ft_nm: /usr/bin/VBoxSDL: file format not recognized
+ft_nm: /usr/bin/VirtualBox: file format not recognized
+ft_nm: /usr/bin/X: file format not recognized
+ft_nm: /usr/bin/X11: file format not recognized
+ft_nm: /usr/bin/Xdummy: file format not recognized
+ft_nm: /usr/bin/Xorg: file format not recognized
+ft_nm: /usr/bin/acpidbg: file format not recognized
+ft_nm: /usr/bin/add-apt-repository: file format not recognized
+ft_nm: /usr/bin/amuFormat.sh: file format not recognized
+ft_nm: /usr/bin/anytopnm: file format not recognized
+ft_nm: /usr/bin/apg: file format not recognized
+ft_nm: /usr/bin/apm: file format not recognized
+ft_nm: /usr/bin/apport-bug: file format not recognized
+ft_nm: /usr/bin/apport-cli: file format not recognized
+ft_nm: /usr/bin/apport-collect: file format not recognized
+ft_nm: /usr/bin/apport-unpack: file format not recognized
+ft_nm: /usr/bin/apt-add-repository: file format not recognized
+ft_nm: /usr/bin/apt-key: file format not recognized
+ft_nm: /usr/bin/aptdcon: file format not recognized
+ft_nm: /usr/bin/asan_symbolize-12: file format not recognized
+ft_nm: /usr/bin/aspell-import: file format not recognized
+ft_nm: /usr/bin/atom: file format not recognized
+ft_nm: /usr/bin/automat-visualize3: file format not recognized
+ft_nm: /usr/bin/avr-man: file format not recognized
+ft_nm: /usr/bin/base58: file format not recognized
+ft_nm: /usr/bin/bashbug: file format not recognized
+ft_nm: /usr/bin/brave-browser: file format not recognized
+ft_nm: /usr/bin/brave-browser-stable: file format not recognized
+ft_nm: /usr/bin/browse: file format not recognized
+ft_nm: /usr/bin/bundle3.0: file format not recognized
+ft_nm: /usr/bin/bundler3.0: file format not recognized
+ft_nm: /usr/bin/byobu: file format not recognized
+ft_nm: /usr/bin/byobu-config: file format not recognized
+ft_nm: /usr/bin/byobu-ctrl-a: file format not recognized
+ft_nm: /usr/bin/byobu-disable: file format not recognized
+ft_nm: /usr/bin/byobu-disable-prompt: file format not recognized
+ft_nm: /usr/bin/byobu-enable: file format not recognized
+ft_nm: /usr/bin/byobu-enable-prompt: file format not recognized
+ft_nm: /usr/bin/byobu-export: file format not recognized
+ft_nm: /usr/bin/byobu-janitor: file format not recognized
+ft_nm: /usr/bin/byobu-keybindings: file format not recognized
+ft_nm: /usr/bin/byobu-launch: file format not recognized
+ft_nm: /usr/bin/byobu-launcher: file format not recognized
+ft_nm: /usr/bin/byobu-launcher-install: file format not recognized
+ft_nm: /usr/bin/byobu-launcher-uninstall: file format not recognized
+ft_nm: /usr/bin/byobu-layout: file format not recognized
+ft_nm: /usr/bin/byobu-prompt: file format not recognized
+ft_nm: /usr/bin/byobu-quiet: file format not recognized
+ft_nm: /usr/bin/byobu-reconnect-sockets: file format not recognized
+ft_nm: /usr/bin/byobu-screen: file format not recognized
+ft_nm: /usr/bin/byobu-select-backend: file format not recognized
+ft_nm: /usr/bin/byobu-select-profile: file format not recognized
+ft_nm: /usr/bin/byobu-select-session: file format not recognized
+ft_nm: /usr/bin/byobu-shell: file format not recognized
+ft_nm: /usr/bin/byobu-silent: file format not recognized
+ft_nm: /usr/bin/byobu-status: file format not recognized
+ft_nm: /usr/bin/byobu-status-detail: file format not recognized
+ft_nm: /usr/bin/byobu-tmux: file format not recognized
+ft_nm: /usr/bin/byobu-ugraph: file format not recognized
+ft_nm: /usr/bin/byobu-ulevel: file format not recognized
+ft_nm: /usr/bin/bzcmp: file format not recognized
+ft_nm: /usr/bin/bzdiff: file format not recognized
+ft_nm: /usr/bin/bzegrep: file format not recognized
+ft_nm: /usr/bin/bzexe: file format not recognized
+ft_nm: /usr/bin/bzfgrep: file format not recognized
+ft_nm: /usr/bin/bzgrep: file format not recognized
+ft_nm: /usr/bin/bzless: file format not recognized
+ft_nm: /usr/bin/bzmore: file format not recognized
+ft_nm: /usr/bin/c89: file format not recognized
+ft_nm: /usr/bin/c89-gcc: file format not recognized
+ft_nm: /usr/bin/c99: file format not recognized
+ft_nm: /usr/bin/c99-gcc: file format not recognized
+ft_nm: /usr/bin/c_rehash: file format not recognized
+ft_nm: /usr/bin/callgrind_annotate: file format not recognized
+ft_nm: /usr/bin/callgrind_control: file format not recognized
+ft_nm: /usr/bin/caribou-preferences: file format not recognized
+ft_nm: /usr/bin/cautious-launcher: file format not recognized
+ft_nm: /usr/bin/cftp3: file format not recognized
+ft_nm: /usr/bin/cg_annotate: file format not recognized
+ft_nm: /usr/bin/cg_diff: file format not recognized
+ft_nm: /usr/bin/chardet: file format not recognized
+ft_nm: /usr/bin/chardetect: file format not recognized
+ft_nm: /usr/bin/check-language-support: file format not recognized
+ft_nm: /usr/bin/chrome-gnome-shell: file format not recognized
+ft_nm: /usr/bin/chsh.ldap: file format not recognized
+ft_nm: /usr/bin/ckbcomp: file format not recognized
+ft_nm: /usr/bin/ckeygen3: file format not recognized
+ft_nm: /usr/bin/clang-tidy-diff-12.py: file format not recognized
+ft_nm: /usr/bin/cloud-id: file format not recognized
+ft_nm: /usr/bin/cloud-init: file format not recognized
+ft_nm: /usr/bin/cloud-init-per: file format not recognized
+ft_nm: /usr/bin/code: file format not recognized
+ft_nm: /usr/bin/col1: file format not recognized
+ft_nm: /usr/bin/col2: file format not recognized
+ft_nm: /usr/bin/col3: file format not recognized
+ft_nm: /usr/bin/col4: file format not recognized
+ft_nm: /usr/bin/col5: file format not recognized
+ft_nm: /usr/bin/col6: file format not recognized
+ft_nm: /usr/bin/col7: file format not recognized
+ft_nm: /usr/bin/col8: file format not recognized
+ft_nm: /usr/bin/col9: file format not recognized
+ft_nm: /usr/bin/compose: file format not recognized
+ft_nm: /usr/bin/conch3: file format not recognized
+ft_nm: /usr/bin/corelist: file format not recognized
+ft_nm: /usr/bin/corepack: file format not recognized
+ft_nm: /usr/bin/cpan: file format not recognized
+ft_nm: /usr/bin/cpan5.34-x86_64-linux-gnu: file format not recognized
+ft_nm: /usr/bin/cpupower: file format not recognized
+nm: '/usr/bin/crc': No such file
+ft_nm: /usr/bin/ctail: file format not recognized
+ft_nm: /usr/bin/cvlc: file format not recognized
+ft_nm: /usr/bin/cygdb3: file format not recognized
+ft_nm: /usr/bin/cython3: file format not recognized
+nm: '/usr/bin/db_sql': No such file
+ft_nm: /usr/bin/deb-systemd-helper: file format not recognized
+ft_nm: /usr/bin/deb-systemd-invoke: file format not recognized
+ft_nm: /usr/bin/debconf: file format not recognized
+ft_nm: /usr/bin/debconf-apt-progress: file format not recognized
+ft_nm: /usr/bin/debconf-communicate: file for

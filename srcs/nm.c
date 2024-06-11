@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:59:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/06/03 18:32:29 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/06/11 17:39:02 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	nm_32(int fd, t_data *data)
 	Elf32_Ehdr	*stock;
 	struct stat	buf;
 	void		*toto;
+	(void)stock;
 
 	int ret = fstat(fd, &buf);
 	if (ret == -1)
@@ -26,6 +27,7 @@ void	nm_32(int fd, t_data *data)
 	if (toto == MAP_FAILED)
 		return ;
 	stock = (Elf32_Ehdr*)toto;
+	(void)stock;
 }
 
 void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
@@ -35,10 +37,14 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 		int		sym_val = all_sym[i]->st_value;
 		char	*name = str+all_sym[i]->st_name;
 		char	symbol = '?';
-
+		
+		if (ft_strlen(name) < 1)
+			continue;
 		if (ELF64_ST_TYPE(all_sym[i]->st_info) == STT_FILE)
 			continue ;
-		if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_GNU_UNIQUE)
+		if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_WEAK)
+			symbol = 'w';
+		else if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_GNU_UNIQUE)
 			symbol = 'u';
 		else if (all_sym[i]->st_shndx == SHN_UNDEF)
 			symbol = 'U';
@@ -49,16 +55,27 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 		else if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_WEAK\
 			&& ELF64_ST_TYPE(all_sym[i]->st_info) == STT_OBJECT)
 			symbol = 'v';
-		else if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_WEAK)
-			symbol = 'w';
-		// else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS\
-		// 	&& s_shdr[all_sym[i]->st_shndx].sh_type == (SHF_ALLOC | SHF_WRITE))
-		// 	symbol = 'd';
-		else if (ELF64_ST_TYPE(all_sym[i]->st_info) == STT_FUNC)
+		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS\
+			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
+			symbol = 'd';
+		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS \
+			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_EXECINSTR))
 			symbol = 't';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_DYNAMIC)
 			symbol = 'd';
-		printf("%016x %c %s\n", sym_val, symbol, name);
+		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_NOBITS)
+			symbol = 'b';
+		// else if (ELF64_ST_TYPE(all_sym[i]->st_info) == STT_SECTION)
+		// else if (s_ehdr[all_sym[i]->st_shndx].e_flags == PF_R)
+		else if ((s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_ALLOC) \
+			&& !(s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_WRITE))
+			symbol = 'r';
+		if (ELF64_ST_BIND(all_sym[i]->st_info) != STB_LOCAL && symbol != '?')
+			symbol = ft_toupper(symbol);
+		if (sym_val)
+			printf("%016x %c %s\n", sym_val, symbol, name);
+		else
+			printf("%16c %c %s\n", ' ', symbol, name);
 	}
 }
 
