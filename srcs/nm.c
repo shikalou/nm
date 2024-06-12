@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:59:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/06/11 17:39:02 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/06/12 15:56:32 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,11 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 		if (ELF64_ST_TYPE(all_sym[i]->st_info) == STT_FILE)
 			continue ;
 		if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_WEAK)
-			symbol = 'w';
+		{
+			symbol = 'W';
+			if (all_sym[i]->st_shndx == SHN_UNDEF)
+				symbol = 'w';
+		}
 		else if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_GNU_UNIQUE)
 			symbol = 'u';
 		else if (all_sym[i]->st_shndx == SHN_UNDEF)
@@ -70,7 +74,7 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 		else if ((s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_ALLOC) \
 			&& !(s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_WRITE))
 			symbol = 'r';
-		if (ELF64_ST_BIND(all_sym[i]->st_info) != STB_LOCAL && symbol != '?')
+		if (ELF64_ST_BIND(all_sym[i]->st_info) == STB_GLOBAL)
 			symbol = ft_toupper(symbol);
 		if (sym_val)
 			printf("%016x %c %s\n", sym_val, symbol, name);

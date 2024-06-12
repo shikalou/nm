@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 16:31:17 by ldinaut           #+#    #+#              #
-#    Updated: 2024/05/31 18:06:54 by ldinaut          ###   ########.fr        #
+#    Updated: 2024/06/12 16:55:35 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS_FILES	=	main.c parsing.c lst_utils.c struct_utils.c nm.c nm_utils.c
 
 SRCS		=	$(addprefix srcs/, $(SRCS_FILES))
 
-CC			=	cc
+CC			=	clang
 
 LIB			=	-Llibft -lft
 
