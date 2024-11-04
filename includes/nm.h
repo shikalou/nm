@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:13:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/31 18:25:09 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/04 17:15:57 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_data
 /*nm trucs*/
 void	nm_32(int fd, t_data *data);
 void	nm_64(int fd, t_data *data);
+void	sort_tab32(Elf32_Sym **all_sym, int size, char *str);
 void	sort_tab64(Elf64_Sym **all_sym, int size, char *str);
 
 /*PARSING*/
