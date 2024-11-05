@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:59:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/11/04 17:25:04 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/05 17:55:36 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,19 @@ void	print_32(Elf32_Sym **all_sym, int size, char *str, Elf32_Shdr *s_shdr)
 			symbol = 'c';
 		else if (stb_info == STB_WEAK && stt_info == STT_OBJECT)
 			symbol = 'v';
-		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS\
-			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
-			symbol = 'd';
+		// else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS
+			// && s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
+			// symbol = 'd';
+		else if (stt_info == SHT_MIPS_DEBUG || s_shdr[all_sym[i]->st_shndx].sh_type == SHT_MIPS_DEBUG)
+			symbol = 'n';
+		else if (stt_info == STT_GNU_IFUNC)
+			symbol = 'i';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_FINI_ARRAY\
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
-			symbol = 'd';
+			symbol = 't';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_INIT_ARRAY\
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
-			symbol = 'd';
+			symbol = 't';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS \
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_EXECINSTR))
 			symbol = 't';
@@ -66,12 +70,14 @@ void	print_32(Elf32_Sym **all_sym, int size, char *str, Elf32_Shdr *s_shdr)
 		else if ((s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_ALLOC) \
 			&& !(s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_WRITE))
 			symbol = 'r';
-		if (stb_info == STB_GLOBAL)
+		if (stb_info == STB_GLOBAL && symbol != 'i')
 			symbol = ft_toupper(symbol);
 		if (sym_val)
 			printf("%08x %c %s\n", sym_val, symbol, name);
-		else
+		else if (symbol == 'u' || symbol == 'U' || symbol == 'w' || symbol == 'W')
 			printf("%8c %c %s\n", ' ', symbol, name);
+		else
+			printf("%08x %c %s\n", 0, symbol, name);
 	}
 }
 
@@ -146,12 +152,17 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 			symbol = 'c';
 		else if (stb_info == STB_WEAK && stt_info == STT_OBJECT)
 			symbol = 'v';
+		else if (stt_info == STT_GNU_IFUNC)
+			symbol = 'i';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS\
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
 			symbol = 'd';
-		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_FINI_ARRAY || s_shdr[all_sym[i]->st_shndx].sh_type == SHT_INIT_ARRAY\
+		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_FINI_ARRAY\
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
-			symbol = 't';
+			symbol = 'd';
+		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_INIT_ARRAY\
+			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
+			symbol = 'd';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS \
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_EXECINSTR))
 			symbol = 't';
@@ -166,12 +177,14 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 		else if ((s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_ALLOC) \
 			&& !(s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_WRITE))
 			symbol = 'r';
-		if (stb_info == STB_GLOBAL)
+		if (stb_info == STB_GLOBAL && symbol != 'i')
 			symbol = ft_toupper(symbol);
 		if (sym_val)
 			printf("%016x %c %s\n", sym_val, symbol, name);
-		else
+		else if (symbol == 'u' || symbol == 'U' || symbol == 'w' || symbol == 'W')
 			printf("%16c %c %s\n", ' ', symbol, name);
+		else
+			printf("%016x %c %s\n", 0, symbol, name);
 	}
 }
 

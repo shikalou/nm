@@ -1,3 +1,5 @@
+cp ../objs/main.o ../
+
 echo "Test 1: one file/cmd (no options)"
 
 echo ".././ft_nm ../ft_nm >> ft_test"
@@ -105,7 +107,7 @@ echo ".././ft_nm ../ft_nm /lib*/* ../main.o -gpru >> ft_test"
 echo "nm ../ft_nm /lib*/* ../main.o -gpru >> rt_test"
 nm ../ft_nm /lib*/* ../main.o -gpru >> rt_test
 
-echo ".././ft_nm ../ft_printf/*/* /lib*/* /usr/bin/* >> ft_test"
-.././ft_nm ../ft_printf/*/* /lib*/* /usr/bin/* >> ft_test
-echo ".././nm ../ft_printf/*/* /lib*/* /usr/bin/* >> rt_test"
-nm ../ft_printf/*/* /lib*/* /usr/bin/* >> rt_test
+echo ".././ft_nm /lib*/* /usr/bin/* >> ft_test"
+.././ft_nm /lib*/* /usr/bin/* >> ft_test
+echo ".././nm /lib*/* /usr/bin/* >> rt_test"
+nm /lib*/* /usr/bin/* >> rt_test
