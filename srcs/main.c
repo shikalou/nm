@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 17:43:29 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/31 18:25:53 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:55:58 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 		int fd = open("a.out", O_RDONLY);
 		if (fd == -1)
 		{
-			printf("nm: 'a.out': %s\n", strerror(errno));
+			fprintf(stderr, "nm: 'a.out': %s\n", strerror(errno));
 			free_struct(data);
 			return (1);
 		}
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 		else if (elf_t == 2)
 			nm_64(fd, data);
 		else
-			printf("ft_nm: a.out: file format not recognized\n");
+			fprintf(stderr, "ft_nm: a.out: file format not recognized\n");
 		free_struct(data);
 		return (0);
 	}
@@ -71,12 +71,18 @@ int	main(int argc, char **argv)
 		if (head->fd != -1)
 		{
 			elf_t = check_elf(head->fd);
+			if (elf_t != 1 && elf_t != 2)
+			{
+				fprintf(stderr, "ft_nm: %s: file format not recognized\n", head->name);
+				head = head->next;
+				continue ;
+			}
+			if (ac - nb_params > 1)
+				printf("\n%s:\n", head->name);
 			if (elf_t == 1)
 				nm_32(head->fd, data);
 			else if (elf_t == 2)
 				nm_64(head->fd, data);
-			else
-				printf("ft_nm: %s: file format not recognized\n", head->name);
 		}
 		else
 			printf("nm: '%s': No such file\n", head->name);

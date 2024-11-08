@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:13:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/11/04 17:15:57 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:57:28 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_flst
 typedef struct s_data
 {
 	t_flst	*files;
-	//bool	a;
+	bool	a;
 	bool	g;
 	bool	u;
 	bool	r;
@@ -48,8 +48,14 @@ typedef struct s_data
 /*nm trucs*/
 void	nm_32(int fd, t_data *data);
 void	nm_64(int fd, t_data *data);
-void	sort_tab32(Elf32_Sym **all_sym, int size, char *str);
+
+/*NM UTILS*/
 void	sort_tab64(Elf64_Sym **all_sym, int size, char *str);
+void	sort_tab32(Elf32_Sym **all_sym, int size, char *str);
+void	revsort_tab64(Elf64_Sym **all_sym, int size, char *str);
+void	revsort_tab32(Elf32_Sym **all_sym, int size, char *str);
+void	ft_swap64(Elf64_Sym **strs, int i, int j);
+void	ft_swap32(Elf32_Sym **strs, int i, int j);
 
 /*PARSING*/
 int	parse_params(int ac, char **av, t_data *data);

@@ -6,13 +6,13 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:59:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/11/05 17:55:36 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/08 17:15:59 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/nm.h"
 
-void	print_32(Elf32_Sym **all_sym, int size, char *str, Elf32_Shdr *s_shdr)
+void	print_32(Elf32_Sym **all_sym, int size, char *str, Elf32_Shdr *s_shdr, t_data *data)
 {
 	for (int i = 0; i < size; ++i)
 	{
@@ -43,10 +43,8 @@ void	print_32(Elf32_Sym **all_sym, int size, char *str, Elf32_Shdr *s_shdr)
 			symbol = 'c';
 		else if (stb_info == STB_WEAK && stt_info == STT_OBJECT)
 			symbol = 'v';
-		// else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS
-			// && s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
-			// symbol = 'd';
-		else if (stt_info == SHT_MIPS_DEBUG || s_shdr[all_sym[i]->st_shndx].sh_type == SHT_MIPS_DEBUG)
+		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_NOTE\
+			|| !(s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_ALLOC))
 			symbol = 'n';
 		else if (stt_info == STT_GNU_IFUNC)
 			symbol = 'i';
@@ -65,13 +63,15 @@ void	print_32(Elf32_Sym **all_sym, int size, char *str, Elf32_Shdr *s_shdr)
 			symbol = 'd';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_NOBITS)
 			symbol = 'b';
-		// else if (ELF64_ST_TYPE(all_sym[i]->st_info) == STT_SECTION)
-		// else if (s_ehdr[all_sym[i]->st_shndx].e_flags == PF_R)
 		else if ((s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_ALLOC) \
 			&& !(s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_WRITE))
 			symbol = 'r';
 		if (stb_info == STB_GLOBAL && symbol != 'i')
 			symbol = ft_toupper(symbol);
+		if (data->u && !(symbol == 'u' || symbol == 'U' || symbol == 'w'))
+			continue ;
+		if (data->g && stb_info == STB_LOCAL)
+			continue ;
 		if (sym_val)
 			printf("%08x %c %s\n", sym_val, symbol, name);
 		else if (symbol == 'u' || symbol == 'U' || symbol == 'w' || symbol == 'W')
@@ -113,15 +113,20 @@ void	nm_32(int fd, t_data *data)
 				return ;
 			for (int i = 0; i < size; ++i)
 				all_sym[i] = &s_sym[i];
-			sort_tab32(all_sym, size, str);
-			print_32(all_sym, size, str, s_shdr);
+			if (!data->p)
+			{
+				if (data->r == true)
+					revsort_tab32(all_sym, size, str);
+				else
+					sort_tab32(all_sym, size, str);
+			}
+			print_32(all_sym, size, str, s_shdr, data);
 		}
 	}
-	(void)data;
 }
 
 
-void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
+void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr, t_data *data)
 {
 	for (int i = 0; i < size; ++i)
 	{
@@ -152,6 +157,9 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 			symbol = 'c';
 		else if (stb_info == STB_WEAK && stt_info == STT_OBJECT)
 			symbol = 'v';
+		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_NOTE \
+			|| !(s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_ALLOC))
+			symbol = 'n';
 		else if (stt_info == STT_GNU_IFUNC)
 			symbol = 'i';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS\
@@ -159,10 +167,10 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 			symbol = 'd';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_FINI_ARRAY\
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
-			symbol = 'd';
+			symbol = 't';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_INIT_ARRAY\
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_WRITE))
-			symbol = 'd';
+			symbol = 't';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS \
 			&& s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_EXECINSTR))
 			symbol = 't';
@@ -172,13 +180,15 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr)
 			symbol = 'd';
 		else if (s_shdr[all_sym[i]->st_shndx].sh_type == SHT_NOBITS)
 			symbol = 'b';
-		// else if (ELF64_ST_TYPE(all_sym[i]->st_info) == STT_SECTION)
-		// else if (s_ehdr[all_sym[i]->st_shndx].e_flags == PF_R)
 		else if ((s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_ALLOC) \
 			&& !(s_shdr[all_sym[i]->st_shndx].sh_flags & SHF_WRITE))
 			symbol = 'r';
 		if (stb_info == STB_GLOBAL && symbol != 'i')
 			symbol = ft_toupper(symbol);
+		if (data->u && !(symbol == 'u' || symbol == 'U' || symbol == 'w'))
+			continue ;
+		if (data->g && !(isupper(symbol) || symbol == 'w' || symbol == 'i'))
+			continue ;
 		if (sym_val)
 			printf("%016x %c %s\n", sym_val, symbol, name);
 		else if (symbol == 'u' || symbol == 'U' || symbol == 'w' || symbol == 'W')
@@ -220,9 +230,14 @@ void	nm_64(int fd, t_data *data)
 				return ;
 			for (int i = 0; i < size; ++i)
 				all_sym[i] = &s_sym[i];
-			sort_tab64(all_sym, size, str);
-			print_64(all_sym, size, str, s_shdr);
+			if (!data->p)
+			{
+				if (data->r == true)
+					revsort_tab64(all_sym, size, str);
+				else
+					sort_tab64(all_sym, size, str);
+			}
+			print_64(all_sym, size, str, s_shdr, data);
 		}
 	}
-	(void)data;
 }

@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:09:26 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/05/15 16:34:33 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/08 16:57:55 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	parse_params(int ac, char **av, t_data *data)
 			ret++;
 			if (ft_strchr(av[i], 'g'))
 				data->g = true;
+			if (ft_strchr(av[i], 'a'))
+				data->a = true;
 			if (ft_strchr(av[i], 'u'))
 				data->u = true;
 			if (ft_strchr(av[i], 'r'))

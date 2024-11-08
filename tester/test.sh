@@ -1,3 +1,4 @@
+rm rt_test ft_test
 cp ../objs/main.o ../
 
 echo "Test 1: one file/cmd (no options)"
