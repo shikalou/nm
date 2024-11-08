@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:59:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/11/08 17:15:59 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/08 17:21:42 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,7 +187,7 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr, t_da
 			symbol = ft_toupper(symbol);
 		if (data->u && !(symbol == 'u' || symbol == 'U' || symbol == 'w'))
 			continue ;
-		if (data->g && !(isupper(symbol) || symbol == 'w' || symbol == 'i'))
+		if (data->g && stb_info == STB_LOCAL)
 			continue ;
 		if (sym_val)
 			printf("%016x %c %s\n", sym_val, symbol, name);
