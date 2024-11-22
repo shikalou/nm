@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/27 13:25:54 by ldinaut           #+#    #+#              #
-#    Updated: 2021/12/06 14:14:58 by ldinaut          ###   ########.fr        #
+#    Updated: 2024/11/19 17:04:42 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ SRCSBONUS =	ft_lstadd_front.c\
 
 CC	=	clang
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -g3
 
 OBJS	=	$(SRCS:.c=.o)
 

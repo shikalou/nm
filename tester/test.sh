@@ -91,7 +91,24 @@ echo ".././ft_nm /lib32/libpthread.so.0 -r >> ft_test"
 echo "nm /lib32/libpthread.so.0 -r >> rt_test"
 nm /lib32/libpthread.so.0 -r >> rt_test
 
-echo "\nTest 6: multiple files/cmd (multiple options)"
+# echo "\nTest 6: one file/cmd (-r)"
+
+# echo ".././ft_nm ../ft_nm -a >> ft_test"
+# .././ft_nm ../ft_nm -a >> ft_test
+# echo "nm ../ft_nm -a >> rt_test"
+# nm ../ft_nm -a >> rt_test
+
+# echo ".././ft_nm ../main.o -a >> ft_test"
+# .././ft_nm ../main.o -a >> ft_test
+# echo "nm ../main.o -a >> rt_test"
+# nm ../main.o -a >> rt_test
+
+# echo ".././ft_nm /lib32/libpthread.so.0 -r >> ft_test"
+# .././ft_nm /lib32/libpthread.so.0 -r >> ft_test
+# echo "nm /lib32/libpthread.so.0 -r >> rt_test"
+# nm /lib32/libpthread.so.0 -r >> rt_test
+
+echo "\nTest 7: multiple files/cmd (multiple options)"
 
 echo ".././ft_nm ../ft_nm /lib32/libpthread.so.0 ../main.o -rg >> ft_test"
 .././ft_nm ../ft_nm /lib32/libpthread.so.0 ../main.o -rg >> ft_test

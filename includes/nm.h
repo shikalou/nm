@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 19:13:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/11/08 16:57:28 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/22 16:49:34 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	nm_32(int fd, t_data *data);
 void	nm_64(int fd, t_data *data);
 
 /*NM UTILS*/
+// void	sort_tab64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr, char *sections, Elf64_Ehdr *s_ehdr);
 void	sort_tab64(Elf64_Sym **all_sym, int size, char *str);
 void	sort_tab32(Elf32_Sym **all_sym, int size, char *str);
 void	revsort_tab64(Elf64_Sym **all_sym, int size, char *str);

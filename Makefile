@@ -6,7 +6,7 @@
 #    By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/13 16:31:17 by ldinaut           #+#    #+#              #
-#    Updated: 2024/11/08 14:50:53 by ldinaut          ###   ########.fr        #
+#    Updated: 2024/11/19 12:01:34 by ldinaut          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,12 @@ fclean	:	clean
 	rm -rf $(NAME)
 
 re		:	fclean all
+
+docker	: fclean
+	docker build -t toto .
+
+run		: docker
+	docker run -it toto
 
 objs/%.o	: srcs/%.c includes/nm.h
 	mkdir -p objs
