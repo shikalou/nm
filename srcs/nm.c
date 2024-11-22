@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:59:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/11/22 17:40:19 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/22 17:46:37 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,6 @@ void	print_32(Elf32_Sym **all_sym, int size, char *str, Elf32_Shdr *s_shdr, t_da
 			continue;
 		if (stt_info == STT_FILE && !data->a)
 			continue ;
-		if (stb_info == STB_WEAK)
-		{
-			symbol = 'W';
-			if (all_sym[i]->st_shndx == SHN_UNDEF)
-				symbol = 'w';
-		}
 		if (data->a && all_sym[i]->st_shndx > 0 && all_sym[i]->st_shndx < s_ehdr->e_shnum)
 		{
 			// printf("%d et %d\n", s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS, s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_EXECINSTR));
@@ -44,7 +38,13 @@ void	print_32(Elf32_Sym **all_sym, int size, char *str, Elf32_Shdr *s_shdr, t_da
 				name = section_name;
 			}
 		}
-		if (stb_info == STB_GNU_UNIQUE)
+		if (stb_info == STB_WEAK)
+		{
+			symbol = 'W';
+			if (all_sym[i]->st_shndx == SHN_UNDEF)
+				symbol = 'w';
+		}
+		else if (stb_info == STB_GNU_UNIQUE)
 			symbol = 'u';
 		else if (all_sym[i]->st_shndx == SHN_UNDEF)
 			symbol = 'U';
@@ -158,12 +158,6 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr, t_da
 			continue;
 		if (stt_info == STT_FILE && !data->a)
 			continue ;
-		if (stb_info == STB_WEAK)
-		{
-			symbol = 'W';
-			if (all_sym[i]->st_shndx == SHN_UNDEF)
-				symbol = 'w';
-		}
 		if (data->a && all_sym[i]->st_shndx > 0 && all_sym[i]->st_shndx < s_ehdr->e_shnum)
 		{
 			// printf("%d et %d\n", s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS, s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_EXECINSTR));
@@ -174,7 +168,13 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr, t_da
 				name = section_name;
 			}
 		}
-		if (stb_info == STB_GNU_UNIQUE)
+		if (stb_info == STB_WEAK)
+		{
+			symbol = 'W';
+			if (all_sym[i]->st_shndx == SHN_UNDEF)
+				symbol = 'w';
+		}
+		else if (stb_info == STB_GNU_UNIQUE)
 			symbol = 'u';
 		else if (all_sym[i]->st_shndx == SHN_UNDEF)
 			symbol = 'U';
