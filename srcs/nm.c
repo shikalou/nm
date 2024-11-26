@@ -6,7 +6,7 @@
 /*   By: ldinaut <ldinaut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 17:59:43 by ldinaut           #+#    #+#             */
-/*   Updated: 2024/11/22 17:46:37 by ldinaut          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:46:02 by ldinaut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,7 +158,8 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr, t_da
 			continue;
 		if (stt_info == STT_FILE && !data->a)
 			continue ;
-		if (data->a && all_sym[i]->st_shndx > 0 && all_sym[i]->st_shndx < s_ehdr->e_shnum)
+		printf("name = %s = %zu\n", name, ft_strlen(name));
+		if (data->a && ft_strlen(name) < 1 && all_sym[i]->st_shndx > 0 && all_sym[i]->st_shndx < s_ehdr->e_shnum)
 		{
 			// printf("%d et %d\n", s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS, s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_EXECINSTR));
 			if (!(s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS 
