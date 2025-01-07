@@ -112,6 +112,11 @@ void	nm_32(int fd, t_data *data)
 		return ;
 	s_ehdr = (Elf32_Ehdr *)mmap_offset;
 	s_shdr = (Elf32_Shdr *)(mmap_offset + s_ehdr->e_shoff);
+	if (s_ehdr->e_shnum == 0 || s_ehdr->e_shentsize == 0 || s_ehdr->e_shoff >= (unsigned long)buf.st_size)
+	{
+		printf("nm: %s: file format not recognized\n", data->files->name);
+		return ;
+	}
 	char *sections = (char *)(mmap_offset + s_shdr[s_ehdr->e_shstrndx].sh_offset);
 	for (int i = 0; i < s_ehdr->e_shnum; ++i)//parser les sections
 	{
@@ -158,7 +163,6 @@ void	print_64(Elf64_Sym **all_sym, int size, char *str, Elf64_Shdr *s_shdr, t_da
 			continue;
 		if (stt_info == STT_FILE && !data->a)
 			continue ;
-		printf("name = %s = %zu\n", name, ft_strlen(name));
 		if (data->a && ft_strlen(name) < 1 && all_sym[i]->st_shndx > 0 && all_sym[i]->st_shndx < s_ehdr->e_shnum)
 		{
 			// printf("%d et %d\n", s_shdr[all_sym[i]->st_shndx].sh_type == SHT_PROGBITS, s_shdr[all_sym[i]->st_shndx].sh_flags == (SHF_ALLOC | SHF_EXECINSTR));
@@ -244,6 +248,11 @@ void	nm_64(int fd, t_data *data)
 		return ;
 	s_ehdr = (Elf64_Ehdr *)mmap_offset;
 	s_shdr = (Elf64_Shdr *)(mmap_offset + s_ehdr->e_shoff);
+	if (s_ehdr->e_shnum == 0 || s_ehdr->e_shentsize == 0 || s_ehdr->e_shoff >= (unsigned long)buf.st_size)
+	{
+		printf("nm: %s: file format not recognized\n", data->files->name);
+		return ;
+	}
 	char *sections = (char *)(mmap_offset + s_shdr[s_ehdr->e_shstrndx].sh_offset);
 	for (int i = 0; i < s_ehdr->e_shnum; ++i)//parser les sections
 	{

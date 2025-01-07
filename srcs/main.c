@@ -14,7 +14,6 @@
 
 int	check_elf(int fd)
 {
-	// VERIFIER LE RETOUR DES FONCTIONS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	int			ret;
 	void		*toto;
 	Elf64_Ehdr	*sf;
